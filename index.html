@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapStore - Electronics & Gadgets</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">⚡ ZapStore</div>
+      <div class="nav-links">
+        <a href="#">Deals</a>
+        <a href="#">New</a>
+        <a href="#">Brands</a>
+      </div>
+      <button class="cart-button" id="cartButton">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-tag">🔥 Flash Sale — up to 40% off</div>
+      <h1>The coolest gadgets,<br /><span>delivered fast</span></h1>
+      <p>
+        From wireless earbuds to smart home devices — find your next favourite
+        tech toy.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToShop()">Shop Now</button>
+        <button class="btn-secondary">Browse Deals</button>
+      </div>
+    </section>
+
+    <!-- ===== FILTER BUTTONS ===== -->
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <button class="chip active" onclick="filterProducts('All', this)">
+        All
+      </button>
+      <button class="chip" onclick="filterProducts('Audio', this)">
+        Audio
+      </button>
+      <button class="chip" onclick="filterProducts('Wearables', this)">
+        Wearables
+      </button>
+      <button class="chip" onclick="filterProducts('Smart Home', this)">
+        Smart Home
+      </button>
+      <button class="chip" onclick="filterProducts('Accessories', this)">
+        Accessories
+      </button>
+      <button class="chip" onclick="filterProducts('Gaming', this)">
+        Gaming
+      </button>
+    </div>
+
+    <section class="shop-section" id="shopSection">
+      <div class="section-header">
+        <h2>All Products</h2>
+        <span id="productCount">18 items</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-btn" onclick="closeCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is empty. Add something cool! ⚡</p>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display: none">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0</span>
+        </div>
+        <button class="checkout-btn">Checkout →</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      ✅ <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
